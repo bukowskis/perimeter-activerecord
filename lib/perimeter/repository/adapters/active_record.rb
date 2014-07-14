@@ -59,7 +59,7 @@ module Perimeter
               return Operations.failure :record_not_found
             end
 
-            record.assign_attributes attributes
+            record.send :assign_attributes, attributes
 
             if record.invalid?
               entity = record_to_entity record

@@ -22,7 +22,7 @@ module Perimeter
           rescue ::ActiveRecord::RecordNotFound => exception
             Operations.failure :record_not_found, object: exception
 
-          rescue Exception => exception
+          rescue => exception
             ::Trouble.notify exception
             Operations.failure :backend_error, object: exception
           end
@@ -45,7 +45,7 @@ module Perimeter
               Operations.failure :creation_failed, object: record_to_entity(record)
             end
 
-          rescue Exception => exception
+          rescue => exception
             ::Trouble.notify exception
             Operations.failure :backend_error, object: exception
           end
@@ -72,7 +72,7 @@ module Perimeter
               Operations.failure :update_failed
             end
 
-          rescue Exception => exception
+          rescue => exception
             ::Trouble.notify exception
             Operations.failure :backend_error, object: exception
           end
@@ -88,7 +88,7 @@ module Perimeter
               Operations.failure :destruction_failed
             end
 
-          rescue Exception => exception
+          rescue => exception
             ::Trouble.notify exception
             Operations.failure :backend_error, object: exception
           end

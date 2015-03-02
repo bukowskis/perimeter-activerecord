@@ -1,9 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../support/models', __FILE__)
 
-require 'perimeter-activerecord'
-
 require 'sqlite3'
 require 'active_record'
+require 'perimeter-activerecord'
 
 RSpec.configure do |config|
 

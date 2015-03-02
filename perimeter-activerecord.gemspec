@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'perimeter-activerecord'
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.3'
   spec.authors       = %w{ Bukowskis }
   spec.description   = %q{Repository/Entity pattern conventions. This is an adapter for ActiveRecord.}
   spec.summary       = %q{Repository/Entity pattern conventions. This is an adapter for ActiveRecord.}

@@ -62,7 +62,7 @@ describe Perimeter::Repository::Adapters::ActiveRecord do
 
     context 'the repository had problems' do
       before do
-        allow( repository::Backend ).to receive(:find).and_raise NoMemoryError
+        allow( repository::Backend ).to receive(:find).and_raise StandardError
         expect( Trouble ).to receive(:notify)
       end
 
@@ -79,7 +79,7 @@ describe Perimeter::Repository::Adapters::ActiveRecord do
       end
 
       it 'holds the exception' do
-        expect( finding.object ).to be_instance_of NoMemoryError
+        expect( finding.object ).to be_instance_of StandardError
       end
     end
   end
